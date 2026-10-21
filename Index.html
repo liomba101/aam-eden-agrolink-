@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAM_Éden AgroLink</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f8f2;
+      color: #263528;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #174d2b;
+      color: white;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: #ffbd45;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffbd45;
+    }
+
+    /* BANNIÈRE : IMAGE SEULEMENT */
+    .hero {
+      width: 100%;
+      height: 300px;
+      background-image: url("https://i.postimg.cc/B6hjwTYj/file-000000004078820abd26feefcf672c1a.png");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-color: #e8f1e5;
+    }
+
+    section {
+      padding: 40px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 12px;
+      color: #174d2b;
+      font-size: 29px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #59665b;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border-top: 4px solid #31834b;
+    }
+
+    .product-icon {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .product-card h3 {
+      color: #174d2b;
+      margin-bottom: 8px;
+    }
+
+    .product-card p {
+      color: #59665b;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #26723d;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffbd45;
+      color: #173d24;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 7px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .product-card .btn {
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #f5a91d;
+    }
+
+    .about {
+      background: #e8f1e5;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      margin-top: 14px;
+    }
+
+    .quote-section {
+      background: white;
+    }
+
+    .quote-form {
+      max-width: 650px;
+      margin: 25px auto 0;
+      padding: 25px;
+      background: #f5f8f2;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd6ca;
+      border-radius: 6px;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .quote-form .btn {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    #resultat {
+      display: none;
+      margin-top: 20px;
+      padding: 16px;
+      background: #e2f2e4;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: #123b21;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    footer a {
+      color: #ffbd45;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 13px;
+      }
+
+      .hero {
+        height: 220px;
+      }
+
+      section {
+        padding: 32px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">AAM_Éden <span>AgroLink</span></div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Produits</a>
+      <a href="#apropos">À propos</a>
+      <a href="#devis">Devis</a>
+    </nav>
+  </header>
+
+  <!-- IMAGE SEULEMENT : PAS DE TITRE NI DE BOUTON -->
+  <div class="hero" id="accueil"></div>
+
+  <section id="produits">
+    <h2 class="section-title">Notre catalogue agricole</h2>
+
+    <p class="section-intro">
+      Découvrez les produits agricoles proposés par notre réseau
+      de producteurs partenaires. Les prix et les disponibilités
+      sont confirmés sur demande.
+    </p>
+
+    <div class="products">
+
+      <article class="product-card">
+        <div class="product-icon">☕</div>
+        <h3>Café</h3>
+        <p>
+          Café d'origine africaine destiné aux commerçants,
+          distributeurs et transformateurs.
+        </p>
+        <div class="price">Prix sur devis</div>
+        <button class="btn" onclick="choisirProduit('Café')">
+          Demander un devis
+        </button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-icon">🍫</div>
+        <h3>Cacao</h3>
+        <p>
+          Cacao destiné aux acheteurs professionnels
+          et aux industries de transformation.
+        </p>
+        <div class="price">Prix sur devis</div>
+        <button class="btn" onclick="choisirProduit('Cacao')">
+          Demander un devis
+        </button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-icon">🍍</div>
+        <h3>Ananas</h3>
+        <p>
+          Ananas frais pour les commerçants, distributeurs
+          et entreprises agroalimentaires.
+        </p>
+        <div class="price">Prix sur devis</div>
+        <button class="btn" onclick="choisirProduit('Ananas')">
+          Demander un devis
+        </button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-icon">🥑</div>
+        <h3>Avocats</h3>
+        <p>
+          Avocats destinés aux marchés de gros,
+          aux distributeurs et aux partenaires commerciaux.
+        </p>
+        <div class="price">Prix sur devis</div>
+        <button class="btn" onclick="choisirProduit('Avocats')">
+          Demander un devis
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="about" id="apropos">
+    <div class="about-content">
+      <h2 class="section-title">À propos d'AAM_Éden AgroLink</h2>
+
+      <p>
+        AAM_Éden AgroLink vise à faciliter la mise en relation
+        entre producteurs agricoles, fournisseurs et acheteurs.
+        Notre ambition est de valoriser les produits agricoles
+        et de développer des partenariats commerciaux durables.
+      </p>
+
+      <p>
+        La plateforme a vocation à accueillir les produits
+        de plusieurs producteurs et à faciliter les demandes
+        de renseignements et de devis.
+      </p>
+    </div>
+  </section>
+
+  <section class="quote-section" id="devis">
+    <h2 class="section-title">Demander un devis</h2>
+
+    <p class="section-intro">
+      Remplissez les informations ci-dessous pour préparer
+      votre demande commerciale.
+    </p>
+
+    <form class="quote-form" id="formDevis">
+
+      <div class="form-group">
+        <label for="nom">Nom ou entreprise *</label>
+        <input id="nom" type="text"
+          placeholder="Votre nom ou entreprise" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input id="email" type="email"
+          placeholder="exemple@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone ou WhatsApp *</label>
+        <input id="telephone" type="tel"
+          placeholder="Votre numéro avec indicatif" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pays">Pays de livraison *</label>
+        <input id="pays" type="text"
+          placeholder="Exemple : Algérie, RDC..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="produit">Produit recherché *</label>
+        <select id="produit" required>
+          <option value="">Choisir un produit</option>
+          <option value="Café">Café</option>
+          <option value="Cacao">Cacao</option>
+          <option value="Ananas">Ananas</option>
+          <option value="Avocats">Avocats</option>
+          <option value="Autre produit agricole">
+            Autre produit agricole
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantite">Quantité souhaitée *</label>
+        <input id="quantite" type="text"
+          placeholder="Exemple : 100 kg ou 2 tonnes" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Informations complémentaires</label>
+        <textarea id="message"
+          placeholder="Qualité recherchée, délai, livraison..."></textarea>
+      </div>
+
+      <button type="submit" class="btn">
+        Préparer ma demande
+      </button>
+
+      <div id="resultat" aria-live="polite"></div>
+
+    </form>
+  </section>
+
+  <footer>
+    <p><strong>AAM_Éden AgroLink</strong></p>
+    <p>Ensemble, développons des échanges agricoles durables.</p>
+    <p>
+      Contact :
+      <a href="mailto:edengroupeagricolesbusiness@gmail.com">
+        edengroupeagricolesbusiness@gmail.com
+      </a>
+    </p>
+    <p>© 2026 AAM_Éden AgroLink — Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function choisirProduit(nomProduit) {
+      document.getElementById("produit").value = nomProduit;
+
+      document.getElementById("devis").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    document.getElementById("formDevis").addEventListener(
+      "submit",
+      function(event) {
+        event.preventDefault();
+
+        const nom = document.getElementById("nom").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telephone =
+          document.getElementById("telephone").value.trim();
+        const pays = document.getElementById("pays").value.trim();
+        const produit = document.getElementById("produit").value;
+        const quantite =
+          document.getElementById("quantite").value.trim();
+        const message =
+          document.getElementById("message").value.trim();
+
+        const demande =
+          "DEMANDE DE DEVIS - AAM_Éden AgroLink\n\n" +
+          "Nom / entreprise : " + nom + "\n" +
+          "E-mail : " + (email || "Non renseigné") + "\n" +
+          "Téléphone : " + telephone + "\n" +
+          "Pays : " + pays + "\n" +
+          "Produit : " + produit + "\n" +
+          "Quantité : " + quantite + "\n" +
+          "Informations complémentaires : " +
+          (message || "Aucune");
+
+        const resultat = document.getElementById("resultat");
+        resultat.style.display = "block";
+        resultat.replaceChildren();
+
+        const titre = document.createElement("strong");
+        titre.textContent = "Votre demande est prête.";
+        resultat.appendChild(titre);
+
+        const texte = document.createElement("p");
+        texte.textContent =
+          "Attention : cette version est un prototype. " +
+          "Votre demande n'est pas envoyée à l'entreprise. " +
+          "Copiez-la pour la conserver ou la transmettre.";
+        resultat.appendChild(texte);
+
+        const zone = document.createElement("textarea");
+        zone.value = demande;
+        zone.setAttribute("aria-label", "Votre demande de devis");
+        resultat.appendChild(zone);
+
+        const bouton = document.createElement("button");
+        bouton.type = "button";
+        bouton.className = "btn";
+        bouton.style.marginTop = "10px";
+        bouton.textContent = "Copier ma demande";
+
+        bouton.addEventListener("click", function() {
+          zone.select();
+          const copieReussie = document.execCommand("copy");
+
+          bouton.textContent = copieReussie
+            ? "Demande copiée !"
+            : "Sélectionnez le texte pour le copier";
+        });
+
+        resultat.appendChild(bouton);
+      }
+    );
+  </script>
+
+</body>
+</html>
